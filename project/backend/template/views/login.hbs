@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Login Page</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap_min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb_min.css" rel="stylesheet">
+  <style>
+    html,
+    body,
+    header,
+    .view {
+      height: 100vh;
+    }
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 700px;
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 650px;
+      }
+    }
+  </style>
+</head>
+
+<body class="login-page">
+
+  <!-- Main Navigation -->
+  <header>
+    <section class="view intro-2" style="background-image: url(images/back4.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="mask rgba-indigo-light h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+
+              <!-- Form with header -->
+              <form action="/login-response" method="post">
+                <div class="card wow fadeIn" data-wow-delay="0.3s">
+                <div class="card-body">
+
+                  <!-- Header -->
+                  <div class="form-header blue-gradient">
+                    <h3>
+                      <i class="fas fa-user mt-2 mb-2"></i>  AICTE Portal</h3>
+                  </div>
+
+                  <!-- Body -->
+                  <div class="md-form mb-0">
+                    <i class="fas fa-user prefix black-text"></i>
+                    <input type="text" id="orangeForm-name" class="form-control"
+                    name="username" placeholder="Your name">
+                    {{!-- <label for="orangeForm-name">Your name</label> --}}
+                  </div>
+                  <div class="md-form mb-0">
+                    <i class="fas fa-envelope prefix black-text"></i>
+                    <input type="text" id="orangeForm-email" class="form-control"
+                    name="email"
+                    placeholder="Your email">
+                    {{!-- <label for="orangeForm-email">Your email</label> --}}
+                  </div>
+
+                  <div class="md-form mb-0">
+                    <i class="fas fa-lock prefix black-text"></i>
+                    <input type="password" id="orangeForm-pass" class="form-control"
+                    name="password"
+                    placeholder="********">
+                    {{!-- <label for="orangeForm-pass">Your password</label> --}}
+                  </div>
+
+                  <div class="text-center">
+                    <button class="btn blue-gradient btn-lg" type="submit">Login</button>
+                    <hr>
+                  </div>
+
+                </div>
+                </div>
+              </form>
+              <div class="text-center">
+                <a href="/loginadmin" style="text-decoration: none;color: white"><button class="btn blue-gradient btn-lg">Login As Admin</button></a>
+              </div>
+              <!-- Form with header -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </header>
+</body>
+
+</html>

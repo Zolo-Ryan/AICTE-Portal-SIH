@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.containers
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+h1{
+    font-size: 60px;
+    margin-top: 15px;
+}
+.forms
+{
+    margin-top: 50px;
+}
+.branch
+{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.form-selects
+{
+    font-size: 1.1rem;
+}
+.submit
+{
+    margin-top: 15px;
+}
+
+.resultbox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 40px;
+    gap: 20px;
+}
+.result
+{
+    border: solid 2px black;
+    width: 50%;
+}
+.headings
+{
+    border: solid 1px black;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Register New User</title>
+  <!-- Font Awesome -->
+  {{>external}}
+  <style>
+    .mericlass{
+        padding: 20px;
+        border-radius: 8px;
+        align-items: center;
+        border: none;
+    }
+  </style>
+</head>
+
+<body class="fixed-sn white-skin">
+  {{>header_admin}}
+
+  <!-- Main layout -->
+  <main>
+    <div class="card-body">
+
+          <!-- Section heading -->
+          <h1 class="text-center my-5 h1">Register New User</h1>
+          <form action="/register-new-user-response" method="POST">
+            <h5 class="pb-5">Details</h5>
+
+            <!-- Grid row -->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col-md-4 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="text" id="f2" class="form-control" name="username">
+                  <label for="f2" class="">Username</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="number" id="f2" class="form-control" name="regisid">
+                  <label for="f2" class="">RegistrationID</label>
+                </div>
+
+              </div>
+              <div class="col-md-4 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="text" id="f2" class="form-control" name="position">
+                  <label for="f2" class="">Position</label>
+                </div>
+
+              </div>
+              <div class="col-md-4 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="text" id="f2" class="form-control" name="deptt">
+                  <label for="f2" class="">Department</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="text" id="f2" class="form-control" name="instname">
+                  <label for="f2" class="">Institute Name</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="number" id="f2" class="form-control" name="instid">
+                  <label for="f2" class="">InstituteID</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <div class="md-form md-outline">
+                  <input required type="number" id="f2" class="form-control" name="phone">
+                  <label for="f2" class="">PhoneNo.</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row text-left">
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <!-- Email validation -->
+                <div class="md-form md-outline">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input required type="email" id="form61" class="form-control validate" name="email">
+                  <label for="form61" data-error="wrong" data-success="right">Email Address</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <!-- Password validation -->
+                <div class="md-form md-outline">
+                  <i class="fas fa-lock prefix"></i>
+                  <input required type="password" id="form71" class="form-control validate" name="password">
+                  <label for="form71" data-error="wrong" data-success="right">Password</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <h5 class="pb-5">Confirm Email and password</h5>
+
+            <!-- Grid row -->
+            <div class="row text-left">
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <!-- Email validation -->
+                <div class="md-form md-outline">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input required type="email" id="form81" class="form-control validate" name="cemail">
+                  <label for="form81" data-error="wrong" data-success="right">Email Address</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <!-- Password validation -->
+                <div class="md-form md-outline">
+                  <i class="fas fa-lock prefix"></i>
+                  <input required type="password" id="form91" class="form-control validate" name="cpassword">
+                  <label for="form91" data-error="wrong" data-success="right">Password</label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+            <h5 class="pb-5">Description</h5>
+
+            <!-- Grid row -->
+            <div class="row text-left">
+
+              <!-- Grid column -->
+              <div class="col-md-6 mb-4">
+
+                <!-- Basic textarea -->
+                <div class="md-form md-outline">
+                  <textarea type="text" id="form101" class="md-textarea form-control" rows="3" name="textbox"></textarea>
+                  <label for="form101"></label>
+                </div>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="mericlass">
+
+              
+                <button type="submit" placeholder="Submit" class="btn blue-gradient btn-lg">Submit</button>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+          </form>
+
+    </div>
+  </main>
+  <!-- Main layout -->
+
+  {{>footer}}
+  <script>
+    // SideNav Initialization
+    $(".button-collapse").sideNav();
+
+    var container = document.querySelector('.custom-scrollbar');
+    var ps = new PerfectScrollbar(container, {
+      wheelSpeed: 2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+
+  </script>
+  {{>external_end}}
+
+</body>
+
+</html>

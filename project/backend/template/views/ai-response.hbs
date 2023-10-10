@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title>
+    <link rel="stylesheet" href="css/style.css">
+    {{>external}}
+</head>
+<body class="fixed-sn white-skin">
+    {{>header}}
+    <main>
+    <div class="container-fluid">
+      <section class="mb-5">
+            <div class="card card-cascade narrower" style="padding-left: 20%;">
+                <h1>Industry Tech</h1>
+                <div class="forms">
+                    <label for="form-selects" class="branch">Enter branch here:</label>
+                    <select id="select">
+                        <option selected value="">Open this select menu</option>
+                        <option value="COMPUTER SCIENCE ENGINEERING">COMPUTER SCIENCE ENGINEERING</option>
+                        <option value="CIVIL ENGINEERING">CIVIL ENGINEERING</option>
+                        <option value="ELECTRONICS">ELECTRONICS</option>
+                        <option value="ELECTRICAL ENGINEERING">ELECTRICAL ENGINEERING</option>
+                        <option value="MECHANICAL ENGINEERING">MECHANICAL ENGINEERING</option>
+                    </select>
+                </div>
+                <!-- <button class="submit" onclick="">Submit</button> -->
+                <div class="resultbox">
+                    <div class="headings">
+                        <caption >Objective</caption>
+                    </div>
+                    <div class="result" id="obj">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, consequuntur.</div>
+                    <div class="headings"><caption>Market requirement</caption></div>
+                    <div class="result">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ratione ipsum. Eligendi magni explicabo eum deleniti enim aliquam, laborum quasi harum dolor nihil. Soluta nisi et ab voluptatum iusto voluptas?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, laudantium suscipit repellat expedita aut totam, consectetur, corrupti magni temporibus molestiae cum. Nulla quisquam magnam ducimus vitae nostrum, error cumque corporis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et soluta tempora non unde a quaerat consequuntur. Facere consectetur minima deserunt accusamus optio esse magni iste ut. Recusandae optio similique mollitia.
+                    </div>
+                    <div class="headings">
+                        <caption >Government requirement</caption>
+                    </div>
+                    <div class="result">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ratione ipsum. Eligendi magni explicabo eum deleniti enim aliquam, laborum quasi harum dolor nihil. Soluta nisi et ab voluptatum iusto voluptas?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, laudantium suscipit repellat expedita aut totam, consectetur, corrupti magni temporibus molestiae cum. Nulla quisquam magnam ducimus vitae nostrum, error cumque corporis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et soluta tempora non unde a quaerat consequuntur. Facere consectetur minima deserunt accusamus optio esse magni iste ut. Recusandae optio similique mollitia.
+                    </div>
+                    <div class="headings">
+                        <caption >Future requirement</caption>
+                    </div>
+                    
+                    <div class="result">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ratione ipsum. Eligendi magni explicabo eum deleniti enim aliquam, laborum quasi harum dolor nihil. Soluta nisi et ab voluptatum iusto voluptas?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, laudantium suscipit repellat expedita aut totam, consectetur, corrupti magni temporibus molestiae cum. Nulla quisquam magnam ducimus vitae nostrum, error cumque corporis?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et soluta tempora non unde a quaerat consequuntur. Facere     consectetur minima deserunt accusamus optio esse magni iste ut. Recusandae optio similique mollitia.
+                    </div>
+
+                </div>
+
+            </div>
+      </section>
+    </div>
+    </main>  
+    <script>
+        const select = document.getElementById('select');
+        
+        async function handleUserInput(message) {
+        let inputMessage = message;
+        let userMessage = "Latest Indutrial Technologies and market demand in " + inputMessage.trim()+" engineering";
+        console.log(userMessage);
+        if(userMessage.length!=0){ // new condition
+            userMessage=JSON.stringify(userMessage); //stringify
+            // addMessageFromUser(userMessage);
+            const apiKey = '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' ; //new api key
+            const endpoint = 'https://api.openai.com/v1/engines/text-davinci-003/completions'; //new model
+            const data = {
+                prompt: userMessage,
+                max_tokens: 1000,
+                temperature: 1, // response quality
+            };
+            const requestOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`,
+                },
+                body: JSON.stringify(data),
+            }
+            try {
+                const response = await fetch(endpoint, requestOptions);
+                const responseData = await response.json();
+                console.log('Response Data:', responseData); // Log the response data to inspect it  
+                if (responseData.choices && responseData.choices.length > 0) {
+                    const modelResponse = responseData.choices[0].text.trim();
+                    // addMessageFromModel(modelResponse);
+                } else {
+                    console.error('Error: No response data or empty choices array from the GPT API.');
+                }
+                const final = await responseData.choices[0].text;
+                document.getElementById('obj').innerHTML = final;
+            } catch (error) {
+                console.error('Error:', error);
+            }   
+            inputMessage.value = '';
+        }
+    }
+
+select.addEventListener('change', function handleChange(event) {
+  console.log(event.target.value); // 👉 get selected VALUE
+    const message = event.target.value;
+    handleUserInput(message);
+});
+    </script>
+    {{>footer}}
+    {{>external_end}}
+</body>
+</html>
